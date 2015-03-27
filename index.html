@@ -39,7 +39,8 @@
           from: moment().subtract(1, 'months'),
           to: moment(),
           limit: 200,                             // maximum number of results to return
-          length: 1                             // number of days each user has to complete the funnel
+          length: 1,                             // number of days each user has to complete the funnel
+          interval: 1
           //where: 'properties["age"] == 21',       // an expression to filter by.
           //segment: '$browser'                     // a segmentation expression or event property.
         }
@@ -52,6 +53,10 @@
           
           params['from'] = dateRange.from.toISOString().substring(0, 10);
           params['to'] = dateRange.to.toISOString().substring(0, 10);
+          var length = 0;
+          length = dateRange.to - dateRange.from;
+          length = length.toISOString().substring(0,10);
+          params['length'] = length;
           params['interval'] = interval;
           funnelResults = {};
           
