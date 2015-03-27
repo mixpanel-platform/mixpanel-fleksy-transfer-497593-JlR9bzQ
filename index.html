@@ -40,7 +40,7 @@
           to: moment(),
           limit: 200,                             // maximum number of results to return
           length: 1,                             // number of days each user has to complete the funnel
-          interval: 1
+          interval: 27
           //where: 'properties["age"] == 21',       // an expression to filter by.
           //segment: '$browser'                     // a segmentation expression or event property.
         }
@@ -55,8 +55,9 @@
           params['to'] = dateRange.to.toISOString().substring(0, 10);
           var length = 0;
           length = dateRange.to - dateRange.from;
-          params['length'] = length
-          params['interval'] = interval;
+          length = length.toISOString().substring(0,10);
+          params['length'] = interval;
+          //params['interval'] = interval;
           funnelResults = {};
           
           if(intervalSelect){
