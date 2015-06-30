@@ -40,7 +40,7 @@
           to: moment(),
           limit: 200,                             // maximum number of results to return
           length: 1,                             // number of days each user has to complete the funnel
-          interval: 31,
+          interval: 1,
           where: '"iPhone OS" in string(properties["$os"])',       // an expression to filter by.
           //segment: '$browser'                     // a segmentation expression or event property.
         }
