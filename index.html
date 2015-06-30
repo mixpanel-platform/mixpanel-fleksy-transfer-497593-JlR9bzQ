@@ -61,7 +61,7 @@
           funnelResults = {};
           
           if(intervalSelect){
-            MP.api.funnel("$custom_event:27561", "First Run Container", params).done(function(results) {
+            MP.api.funnel("First Run", "Settings Change", "First Run", params).done(function(results) {
               console.log(results);
               processResults(results, funnelResults, params['from']);
               //eventTable.MPTable('setData', results);
